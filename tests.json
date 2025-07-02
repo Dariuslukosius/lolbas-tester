@@ -1,0 +1,19 @@
+# Įkeliam JSON su testais
+$tests = Get-Content -Raw -Path ".\tests.json" | ConvertFrom-Json
+
+foreach ($test in $tests) {
+    Write-Host "Testas $($test.test_id): $($test.description)" -ForegroundColor Cyan
+    
+    # --- Čia vykdyk realų testą, dabar imituosime rezultatus ---
+    # Tarkim, kad testas pavyko, jei test_id nelygus 3, kitaip ne
+    if ($test.test_id -ne 3) {
+        $result = $test.expected_result
+        Write-Host "Rezultatas: $result" -ForegroundColor Green
+        Write-Host "Rekomendacija: Viskas OK."
+    }
+    else {
+        Write-Host "Rezultatas: Nepavyko" -ForegroundColor Red
+        Write-Host "Rekomendacija: $($test.recommendation)" -ForegroundColor Yellow
+    }
+    Write-Host "------------------------------------------"
+}
