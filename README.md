@@ -59,7 +59,7 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
 ```powershell
 .\lolbas_tester.ps1
 ```
-
+![Test](images/test.PNG)
 ---
 
 ## Results
@@ -67,8 +67,10 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
 The script generates test reports in the `results` folder:
 
 - `report.html` — a colored and styled HTML report for easier reading in browsers  
-- `report.md` — a simple Markdown report  
+- `report.md` — a simple Markdown report
 
+![Find](images/find.PNG)  
+![Report](images/report.PNG) 
 ---
 
 ## Troubleshooting
